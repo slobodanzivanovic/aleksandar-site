@@ -47,7 +47,7 @@ export const Footer = () => {
             <h3 className="text-white text-xl font-medium mb-6">O Nama</h3>
             <div className="mb-6">
               <img
-                src="/logo as.svg"
+                src="./logo as.svg"
                 alt="Osiguranje Logo"
                 className="h-12 mb-4"
               />

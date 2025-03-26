@@ -89,7 +89,7 @@ export const Header = () => {
             } bg-white rounded-full py-2 px-6 flex items-center justify-between`}
           >
             <div className="flex items-center">
-              <img className="w-16 h-16" src="/logo as.svg" alt="AS Logo" />
+              <img className="w-16 h-16" src="./logo as.svg" alt="AS Logo" />
             </div>
 
             <nav className="hidden md:flex items-center space-x-6">
