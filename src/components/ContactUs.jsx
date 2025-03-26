@@ -1,6 +1,113 @@
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  AlertCircle,
+  CheckCircle,
+} from "lucide-react";
+import { sendContactForm } from "../services/formService";
 
 export const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const [formStatus, setFormStatus] = useState({
+    submitted: false,
+    success: false,
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Ime i prezime je obavezno";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email adresa je obavezna";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Unesite validnu email adresu";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Poruka je obavezna";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    setLoading(true);
+
+    try {
+      const result = await sendContactForm(formData);
+
+      setFormStatus({
+        submitted: true,
+        success: result.success,
+        message: result.message,
+      });
+
+      if (result.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.error("Error sending form:", error);
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: "Došlo je do greške. Molimo pokušajte ponovo kasnije.",
+      });
+    } finally {
+      setLoading(false);
+
+      setTimeout(() => {
+        setFormStatus({
+          submitted: false,
+          success: false,
+          message: "",
+        });
+      }, 5000);
+    }
+  };
+
   return (
     <div className="w-full bg-gray-900 relative overflow-hidden">
       <div className="absolute left-0 top-0 w-full h-full">
@@ -40,30 +147,65 @@ export const ContactUs = () => {
                 Pošaljite nam poruku
               </h3>
 
-              <form className="space-y-6">
+              {formStatus.submitted && (
+                <div
+                  className={`p-4 mb-6 rounded-lg flex items-center ${
+                    formStatus.success
+                      ? "bg-green-900 bg-opacity-50 text-green-200"
+                      : "bg-red-900 bg-opacity-50 text-red-200"
+                  }`}
+                >
+                  {formStatus.success ? (
+                    <CheckCircle className="w-5 h-5 mr-3 flex-shrink-0" />
+                  ) : (
+                    <AlertCircle className="w-5 h-5 mr-3 flex-shrink-0" />
+                  )}
+                  <p>{formStatus.message}</p>
+                </div>
+              )}
+
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-gray-300 mb-2">
-                      Ime i prezime
+                      Ime i prezime <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="text"
                       id="name"
-                      className="w-full bg-blue-800 bg-opacity-50 border border-blue-700 rounded-lg p-3 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-teal-300"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`w-full bg-blue-800 bg-opacity-50 border ${
+                        errors.name ? "border-red-400" : "border-blue-700"
+                      } rounded-lg p-3 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-teal-300`}
                       placeholder="Vaše ime i prezime"
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-red-400 text-sm">{errors.name}</p>
+                    )}
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-gray-300 mb-2">
-                      Email adresa
+                      Email adresa <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="email"
                       id="email"
-                      className="w-full bg-blue-800 bg-opacity-50 border border-blue-700 rounded-lg p-3 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-teal-300"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={`w-full bg-blue-800 bg-opacity-50 border ${
+                        errors.email ? "border-red-400" : "border-blue-700"
+                      } rounded-lg p-3 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-teal-300`}
                       placeholder="email@primer.com"
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-red-400 text-sm">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -75,6 +217,9 @@ export const ContactUs = () => {
                     <input
                       type="tel"
                       id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       className="w-full bg-blue-800 bg-opacity-50 border border-blue-700 rounded-lg p-3 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-teal-300"
                       placeholder="Vaš broj telefona"
                     />
@@ -89,21 +234,30 @@ export const ContactUs = () => {
                     </label>
                     <select
                       id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       className="w-full bg-blue-800 bg-opacity-50 border border-blue-700 rounded-lg p-3 text-white outline-none focus:ring-2 focus:ring-teal-300"
                     >
                       <option value="" className="bg-blue-900">
                         Izaberite temu
                       </option>
-                      <option value="claim" className="bg-blue-900">
+                      <option
+                        value="Odšteta za saobraćajnu nezgodu"
+                        className="bg-blue-900"
+                      >
                         Odšteta za saobraćajnu nezgodu
                       </option>
-                      <option value="insurance" className="bg-blue-900">
+                      <option value="Osiguranje" className="bg-blue-900">
                         Osiguranje
                       </option>
-                      <option value="consultation" className="bg-blue-900">
+                      <option
+                        value="Besplatna konsultacija"
+                        className="bg-blue-900"
+                      >
                         Besplatna konsultacija
                       </option>
-                      <option value="other" className="bg-blue-900">
+                      <option value="Ostalo" className="bg-blue-900">
                         Ostalo
                       </option>
                     </select>
@@ -112,22 +266,61 @@ export const ContactUs = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-gray-300 mb-2">
-                    Poruka
+                    Poruka <span className="text-red-400">*</span>
                   </label>
                   <textarea
                     id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows="6"
-                    className="w-full bg-blue-800 bg-opacity-50 border border-blue-700 rounded-lg p-3 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-teal-300 resize-none"
+                    className={`w-full bg-blue-800 bg-opacity-50 border ${
+                      errors.message ? "border-red-400" : "border-blue-700"
+                    } rounded-lg p-3 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-teal-300 resize-none`}
                     placeholder="Opišite vaš slučaj ili postavite pitanje..."
                   ></textarea>
+                  {errors.message && (
+                    <p className="mt-1 text-red-400 text-sm">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="py-3 px-10 bg-teal-300 hover:bg-teal-400 text-gray-900 font-medium rounded-full transition duration-300"
+                    disabled={loading}
+                    className={`py-3 px-10 bg-teal-300 hover:bg-teal-400 text-gray-900 font-medium rounded-full transition duration-300 flex items-center ${
+                      loading ? "opacity-70 cursor-not-allowed" : ""
+                    }`}
                   >
-                    Pošaljite Poruku
+                    {loading ? (
+                      <>
+                        <svg
+                          className="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-900"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Slanje...
+                      </>
+                    ) : (
+                      "Pošaljite Poruku"
+                    )}
                   </button>
                 </div>
               </form>
