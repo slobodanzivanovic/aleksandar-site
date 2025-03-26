@@ -117,6 +117,56 @@ export const AboutUs = () => {
             </div>
           </div>
         </div>
+        {/* Team section */}
+        <div className="mt-20 bg-blue-900 bg-opacity-40 rounded-3xl p-8 md:p-12">
+          <h3 className="text-3xl font-light text-white mb-8 text-center">
+            Naš Stručni Tim
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-teal-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-gray-900 text-2xl font-bold">01</span>
+              </div>
+              <h4 className="text-xl font-medium text-white mb-3">Advokati</h4>
+              <p className="text-gray-300">
+                Pružaju pravnu podršku i zastupanje tokom celog procesa naknade
+                štete.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-teal-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-gray-900 text-2xl font-bold">02</span>
+              </div>
+              <h4 className="text-xl font-medium text-white mb-3">Pravnici</h4>
+              <p className="text-gray-300">
+                Obezbeđuju pravnu dokumentaciju i savete za efikasno
+                ostvarivanje prava.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-teal-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-gray-900 text-2xl font-bold">03</span>
+              </div>
+              <h4 className="text-xl font-medium text-white mb-3">Veštaci</h4>
+              <p className="text-gray-300">
+                Stručno procenjuju štetu i izrađuju nalaze za sudske i vansudske
+                postupke.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-teal-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-gray-900 text-2xl font-bold">04</span>
+              </div>
+              <h4 className="text-xl font-medium text-white mb-3">
+                Procenitelji
+              </h4>
+              <p className="text-gray-300">
+                Vrše detaljnu procenu štete na vozilima i objektima za
+                maksimalnu naknadu.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

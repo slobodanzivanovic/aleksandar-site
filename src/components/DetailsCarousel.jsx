@@ -1,48 +1,46 @@
-import { Car, Home, Plane, ChevronRight, Dog } from "lucide-react";
+import { Car, Shield, Truck, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 export const DetailsCarousel = () => {
   // State to track active job description
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Job descriptions data
   const jobDetails = [
     {
-      title: "Car Insurance",
+      title: "Naknada Štete na Vozilima",
       icon: <Car className="w-8 h-8 text-white" />,
       description:
-        "Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.",
-      additionalInfo:
-        "Discover the most appropriate fit for you and your Family.",
+        "Kompletan postupak naknade štete od osiguravajućih društava u Srbiji i inostranstvu, kao i od fizičkih lica u slučaju kada nisu osigurani.",
+      additionalInfo: "Brza i efikasna procena sa maksimalnom naknadom.",
       image: "/v303_461.png",
-      imageAlt: "Car with family at sunset",
+      imageAlt: "Oštećeno vozilo",
     },
     {
-      title: "Home Insurance",
-      icon: <Home className="w-8 h-8 text-white" />,
+      title: "Nematerjalna Šteta",
+      icon: <Shield className="w-8 h-8 text-white" />,
       description:
-        "Protect your home and belongings from unexpected events. Our comprehensive coverage ensures peace of mind for you and your family.",
-      additionalInfo: "Find the perfect coverage for your home today.",
+        "Stručna naknada nematerjalne štete za povrede nastale u saobraćajnim nezgodama, po polisi životnog osiguranja ili povrede na radu.",
+      additionalInfo: "Maksimalno ostvarivanje vaših prava na naknadu.",
       image: "/v303_461.png",
-      imageAlt: "House protected by insurance",
+      imageAlt: "Zastupanje klijenata",
     },
     {
-      title: "Pet Insurance",
-      icon: <Dog className="w-8 h-8 text-white" />,
+      title: "Servis i Transport",
+      icon: <Truck className="w-8 h-8 text-white" />,
       description:
-        "Give your pets the care they deserve with our comprehensive pet insurance plans. Cover veterinary expenses and ensure their health and happiness.",
-      additionalInfo: "Tailored plans for all types of pets and budgets.",
+        "Vršimo procenu i popravku vozila u našem servisu, kao i transport (šlep) vozila koja nisu u voznom stanju po celoj Srbiji.",
+      additionalInfo: "Dostupne usluge rente vozila tokom popravke.",
       image: "/v303_461.png",
-      imageAlt: "Happy dog with family",
+      imageAlt: "Transport vozila",
     },
     {
-      title: "Travel Insurance",
-      icon: <Plane className="w-8 h-8 text-white" />,
+      title: "Osiguranje i Otkup",
+      icon: <Shield className="w-8 h-8 text-white" />,
       description:
-        "Travel with confidence knowing you're protected against unexpected events. Our travel insurance covers medical emergencies, trip cancellations, and more.",
-      additionalInfo: "Global coverage for your peace of mind.",
+        "Posredujemo u osiguranju vozila sa kasko polisom kod svih osiguravača, kao i otkup vozila koja nisu u voznom stanju.",
+      additionalInfo: "Stručni saveti za najbolju zaštitu.",
       image: "/v303_461.png",
-      imageAlt: "Family on vacation",
+      imageAlt: "Osiguranje vozila",
     },
   ];
 

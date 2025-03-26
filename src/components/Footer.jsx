@@ -1,4 +1,13 @@
-import { Phone, Mail, MapPin, FileCheck, Shield } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  FileCheck,
+  Shield,
+  Truck,
+  Wrench,
+  Car,
+} from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -155,7 +164,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-white text-xl font-medium mb-6">Naše Usluge</h3>
             <ul className="space-y-3">
@@ -164,8 +172,8 @@ export const Footer = () => {
                   href="#"
                   className="text-gray-300 hover:text-teal-300 transition duration-300 flex items-center"
                 >
-                  <Shield className="w-4 h-4 mr-2 text-teal-300" /> Auto
-                  Osiguranje
+                  <Shield className="w-4 h-4 mr-2 text-teal-300" /> Procena
+                  Štete na Vozilima
                 </a>
               </li>
               <li>
@@ -173,8 +181,8 @@ export const Footer = () => {
                   href="#"
                   className="text-gray-300 hover:text-teal-300 transition duration-300 flex items-center"
                 >
-                  <Shield className="w-4 h-4 mr-2 text-teal-300" /> Životno
-                  Osiguranje
+                  <Shield className="w-4 h-4 mr-2 text-teal-300" /> Nematerjalna
+                  Šteta
                 </a>
               </li>
               <li>
@@ -182,17 +190,18 @@ export const Footer = () => {
                   href="#"
                   className="text-gray-300 hover:text-teal-300 transition duration-300 flex items-center"
                 >
-                  <Shield className="w-4 h-4 mr-2 text-teal-300" /> Zdravstveno
-                  Osiguranje
+                  <Wrench className="w-4 h-4 mr-2 text-teal-300" /> Servis
+                  Vozila
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-teal-300 transition duration-300 flex items-center"
+                  className="text-gray-300 hover:text-teal-300
+                  transition duration-300 flex items-center"
                 >
-                  <Shield className="w-4 h-4 mr-2 text-teal-300" /> Imovinski
-                  Zahtevi
+                  <Truck className="w-4 h-4 mr-2 text-teal-300" /> Transport
+                  Vozila
                 </a>
               </li>
               <li>
@@ -209,8 +218,8 @@ export const Footer = () => {
                   href="#"
                   className="text-gray-300 hover:text-teal-300 transition duration-300 flex items-center"
                 >
-                  <FileCheck className="w-4 h-4 mr-2 text-teal-300" /> Pravni
-                  Saveti
+                  <Car className="w-4 h-4 mr-2 text-teal-300" /> Rent-a-Car
+                  Usluge
                 </a>
               </li>
             </ul>

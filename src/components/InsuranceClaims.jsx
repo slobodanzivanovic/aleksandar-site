@@ -1,4 +1,4 @@
-import { Phone, CreditCard, FileCheck, Clock } from "lucide-react";
+import { FileCheck, Truck, Wrench, Car } from "lucide-react";
 
 export const InsuranceClaims = () => {
   return (
@@ -26,11 +26,11 @@ export const InsuranceClaims = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-light text-white mb-4">
-            Maksimalna Naplata Štete
+            Stručni Tim za Maksimalnu Naknadu
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Naša svrha je da Vam pružimo podršku u što kraćem roku nakon
-            saobraćajne nezgode ili druge štete.
+            Naš tim advokata, pravnika, veštaka i procenitelja pruža kompletnu
+            podršku u procesu naknade štete, od procene do isplate.
           </p>
         </div>
 
@@ -57,20 +57,21 @@ export const InsuranceClaims = () => {
                 Želite Maksimalnu naplatu štete?
               </h3>
               <p className="text-white mb-6 text-center">
-                Naša svrha je da Vam pružimo podršku u što kraćem roku.
+                Naša svrha je da Vam pružimo kompletnu podršku u što kraćem
+                roku.
               </p>
 
               <p className="mb-4">
-                Ako ste vi ili neko koga poznajete doživeli: saobraćajnu
-                nezgodu, povredu na radnom mestu, povrede tokom prevoza ili bilo
-                koju drugu vrstu štete, mi smo tu da vam pomognemo da ostvarite
-                vaša prava na nadoknadu.
+                Ako ste vi ili neko koga poznajete doživeli saobraćajnu nezgodu,
+                imali štetu na vozilu ili objektu, pretrpeli povredu na radnom
+                mestu, ili bilo koju drugu vrstu štete, mi smo tu da vam
+                pomognemo.
               </p>
 
               <p className="mb-8">
-                Naš tim je spreman da vam pruži podršku i pravne savete kako
-                biste osigurali pravičnu kompenzaciju za pretrpljene povrede ili
-                štetu.
+                Naš stručni tim advokata, pravnika, veštaka i procenitelja je
+                spreman da obezbedi maksimalnu naknadu za vašu štetu kroz sve
+                faze postupka.
               </p>
 
               <div className="flex justify-center">
@@ -128,20 +129,46 @@ export const InsuranceClaims = () => {
         {/* Process steps section */}
         <div className="mt-20">
           <h2 className="text-4xl font-light mb-12 text-center text-white">
-            Kako funkcioniše naš proces
+            Naše dodatne usluge
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-blue-900 bg-opacity-60 rounded-3xl p-6 text-center">
               <div className="w-16 h-16 bg-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6 text-teal-300" />
+                <Truck className="w-6 h-6 text-teal-300" />
               </div>
               <h3 className="text-xl font-medium text-white mb-3">
-                Kontaktirajte nas
+                Transport Vozila
               </h3>
               <p className="text-gray-300">
-                Pozovite nas ili popunite online formular da započnemo sa
-                besplatnom procenom vašeg slučaja.
+                Usluge šlep službe za oštećena i neispravna vozila na celoj
+                teritoriji Srbije, sa brzim izlaskom na teren.
+              </p>
+            </div>
+
+            <div className="bg-blue-900 bg-opacity-60 rounded-3xl p-6 text-center">
+              <div className="w-16 h-16 bg-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Wrench className="w-6 h-6 text-teal-300" />
+              </div>
+              <h3 className="text-xl font-medium text-white mb-3">
+                Servis Vozila
+              </h3>
+              <p className="text-gray-300">
+                Profesionalna popravka oštećenih vozila u našem servisu sa
+                iskusnim majstorima i garantovanim delovima.
+              </p>
+            </div>
+
+            <div className="bg-blue-900 bg-opacity-60 rounded-3xl p-6 text-center">
+              <div className="w-16 h-16 bg-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Car className="w-6 h-6 text-teal-300" />
+              </div>
+              <h3 className="text-xl font-medium text-white mb-3">
+                Rent-a-Car
+              </h3>
+              <p className="text-gray-300">
+                Usluge iznajmljivanja vozila tokom perioda popravke vašeg
+                automobila, po povoljnim uslovima.
               </p>
             </div>
 
@@ -150,37 +177,11 @@ export const InsuranceClaims = () => {
                 <FileCheck className="w-6 h-6 text-teal-300" />
               </div>
               <h3 className="text-xl font-medium text-white mb-3">
-                Procena slučaja
+                Otkup Vozila
               </h3>
               <p className="text-gray-300">
-                Naši stručnjaci analiziraju vašu situaciju i dokumentaciju za
-                maksimalnu naknadu štete.
-              </p>
-            </div>
-
-            <div className="bg-blue-900 bg-opacity-60 rounded-3xl p-6 text-center">
-              <div className="w-16 h-16 bg-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-6 h-6 text-teal-300" />
-              </div>
-              <h3 className="text-xl font-medium text-white mb-3">
-                Obrada zahteva
-              </h3>
-              <p className="text-gray-300">
-                Radimo sa osiguravajućim kućama i pravnim institucijama za brzo
-                i efikasno rešavanje.
-              </p>
-            </div>
-
-            <div className="bg-blue-900 bg-opacity-60 rounded-3xl p-6 text-center">
-              <div className="w-16 h-16 bg-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CreditCard className="w-6 h-6 text-teal-300" />
-              </div>
-              <h3 className="text-xl font-medium text-white mb-3">
-                Isplata naknade
-              </h3>
-              <p className="text-gray-300">
-                Nakon uspešnog rešenja, isplata štete se vrši direktno na vaš
-                tekući račun.
+                Otkup vozila koja nisu u voznom stanju po fer cenama, uz
+                kompletan transport i potrebnu dokumentaciju.
               </p>
             </div>
           </div>

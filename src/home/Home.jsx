@@ -8,7 +8,10 @@ import { GoogleMap } from "../components/GoogleMap.jsx";
 export const Home = () => {
   return (
     <>
-      <div className="min-home-screen w-full bg-gray-900 relative overflow-hidden pt-24">
+      <div
+        id="pocetna"
+        className="min-home-screen w-full bg-gray-900 relative overflow-hidden pt-24"
+      >
         {/* Main curved shape */}
         <div className="absolute left-0 top-0 w-full h-full">
           <svg
@@ -34,13 +37,13 @@ export const Home = () => {
           {/* Left side content */}
           <div className="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
             <h1 className="text-5xl sm:text-6xl font-light leading-tight mb-6">
-              We provide the best
+              Brzo i efikasno do
               <br />
-              value insurance
+              naknade štete
             </h1>
             <p className="text-xl text-gray-300 max-w-lg mb-8">
-              Simple Steps You Can Take to Improve Your Financial Well-Being for
-              the rest of Your Life
+              Specijalizovani za procenu i naknadu štete na vozilima i
+              objektima, sa kompletnom pravnom podrškom i pratećim uslugama
             </p>
             <p className="flex items-center gap-3 border-1 border-solid border-blue-800 bg-blue-800 p-2 rounded-lg w-full md:w-fit">
               <Phone size={18} className="mr-2 text-gray-500" />
@@ -124,10 +127,18 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <DetailsCarousel />
-      <AboutUs />
-      <InsuranceClaims />
-      <ContactUs />
+      <div id="usluge">
+        <DetailsCarousel />
+      </div>
+      <div id="o-nama">
+        <AboutUs />
+      </div>
+      <div id="potrazivanja">
+        <InsuranceClaims />
+      </div>
+      <div id="kontakt">
+        <ContactUs />
+      </div>
       <GoogleMap />
     </>
   );
