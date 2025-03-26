@@ -20,9 +20,7 @@ export const App = () => (
       >
         <div className="h-full bg-[#222222]">
           <Header />
-          <div className="p-4 lg:p-24">
-            <Router />
-          </div>
+          <Router />
         </div>
       </Suspense>
     </div>

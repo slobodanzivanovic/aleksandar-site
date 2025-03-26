@@ -1,1 +1,5 @@
 @import 'tailwindcss';
+
+.min-home-screen {
+    min-height: 65vh;
+}
