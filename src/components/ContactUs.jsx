@@ -3,7 +3,6 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 export const ContactUs = () => {
   return (
     <div className="w-full bg-gray-900 relative overflow-hidden">
-      {/* Background shape */}
       <div className="absolute left-0 top-0 w-full h-full">
         <svg
           width="100%"
@@ -35,7 +34,6 @@ export const ContactUs = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Contact form */}
           <div className="w-full lg:w-2/3">
             <div className="bg-blue-900 bg-opacity-50 rounded-3xl p-8">
               <h3 className="text-3xl font-light text-white mb-6">
@@ -136,7 +134,6 @@ export const ContactUs = () => {
             </div>
           </div>
 
-          {/* Contact info */}
           <div className="w-full lg:w-1/3">
             <div className="bg-blue-900 bg-opacity-50 rounded-3xl p-8 h-full">
               <h3 className="text-3xl font-light text-white mb-6">

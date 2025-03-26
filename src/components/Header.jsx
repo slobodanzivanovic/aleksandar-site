@@ -19,7 +19,7 @@ export const Header = () => {
     };
   }, [scrolled]);
 
-  if (location.pathname === "/politika-privatnosti") {
+  if (location.pathname !== "/") {
     return null;
   }
 
@@ -27,7 +27,7 @@ export const Header = () => {
     <div
       className={`${scrolled ? "fixed top-0" : "absolute top-0"} left-0 w-full z-50 py-4 transition-all duration-300`}
       style={{
-        backgroundColor: scrolled ? "rgba(17, 24, 39, 0.9)" : "transparent",
+        backgroundColor: scrolled ? "rgba(17, 24, 39, 0.5)" : "transparent",
         backdropFilter: scrolled ? "blur(10px)" : "none",
       }}
     >
@@ -36,7 +36,6 @@ export const Header = () => {
           className={`${scrolled ? "bg-opacity-90" : ""} bg-white rounded-full py-2 px-6 flex items-center justify-between`}
         >
           <div className="flex items-center justify-between gap-10">
-            {/* Logo */}
             <div className="flex items-center">
               <img className="w-16 h-16" src="./logo as.svg" alt="Vite Logo" />
             </div>

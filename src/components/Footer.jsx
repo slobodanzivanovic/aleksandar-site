@@ -8,11 +8,20 @@ import {
   Wrench,
   Car,
 } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 export const Footer = () => {
+  const location = useLocation();
+
+  if (
+    location.pathname !== "/" &&
+    location.pathname !== "/politika-privatnosti"
+  ) {
+    return null;
+  }
+
   return (
     <footer className="w-full bg-gray-900 relative overflow-hidden pt-16">
-      {/* Background shape */}
       <div className="absolute left-0 top-0 w-full h-full">
         <svg
           width="100%"
@@ -34,7 +43,6 @@ export const Footer = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Company Info */}
           <div>
             <h3 className="text-white text-xl font-medium mb-6">O Nama</h3>
             <div className="mb-6">
@@ -99,7 +107,6 @@ export const Footer = () => {
               </a>
             </div>
           </div>
-          {/* Quick Links */}
           <div>
             <h3 className="text-white text-xl font-medium mb-6">
               Brzi Linkovi
@@ -225,7 +232,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-white text-xl font-medium mb-6">
               Kontaktirajte Nas
@@ -269,7 +275,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-blue-800 py-8 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">

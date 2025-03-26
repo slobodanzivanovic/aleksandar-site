@@ -22,7 +22,7 @@ export const ErrorFallback = ({ error, resetErrorBoundary }) => {
               navigate(RoutePaths.HOME);
             }}
           >
-            Home
+            Početna
           </a>
         </div>
         <div>An error happened. Contact support please!</div>

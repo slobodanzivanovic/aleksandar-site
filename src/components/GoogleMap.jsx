@@ -1,7 +1,6 @@
 export const GoogleMap = () => {
   return (
     <div className="w-full bg-gray-900 relative overflow-hidden">
-      {/* Background shape */}
       <div className="absolute left-0 top-0 w-full h-full">
         <svg
           width="100%"
@@ -32,7 +31,6 @@ export const GoogleMap = () => {
         <div className="relative rounded-3xl overflow-hidden">
           <div className="absolute -inset-2 bg-blue-800 opacity-50 rounded-3xl"></div>
           <div className="relative z-10 rounded-3xl overflow-hidden h-96">
-            {/* Google Maps iframe */}
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.9359968385793!2d20.471618776346654!3d44.802362978999694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7a9f5c429205%3A0xf3e17a0f4b46feb0!2z0JHRg9C70LXQstCw0YAg0LrRgNCw0ZnQsCDQkNC70LXQutGB0LDQvdC00YDQsCwg0JHQtdC-0LPRgNCw0LQ!5e0!3m2!1ssr!2srs!4v1711481649826!5m2!1ssr!2srs"
               className="w-full h-full border-0"

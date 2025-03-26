@@ -2,7 +2,6 @@ import { Car, Shield, Truck, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 export const DetailsCarousel = () => {
-  // State to track active job description
   const [activeIndex, setActiveIndex] = useState(0);
 
   const jobDetails = [
@@ -44,19 +43,16 @@ export const DetailsCarousel = () => {
     },
   ];
 
-  // Function to handle button click
   const handleButtonClick = (index) => {
     setActiveIndex(index);
   };
 
-  // Function to handle next button click
   const handleNextClick = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % jobDetails.length);
   };
 
   return (
     <div className="min-home-screen w-full bg-gray-900 relative overflow-hidden">
-      {/* Background shape */}
       <div className="absolute left-0 top-0 w-full h-full">
         <svg
           width="100%"
@@ -76,10 +72,8 @@ export const DetailsCarousel = () => {
         </svg>
       </div>
 
-      {/* Container for the whole content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 flex flex-col items-center justify-center relative z-10">
         <div className="flex flex-col lg:flex-row w-full items-center lg:items-start justify-center">
-          {/* Left side vertical navigation - becomes horizontal on mobile */}
           <div className="flex flex-row lg:flex-col items-center justify-center lg:justify-start space-x-4 lg:space-x-0 lg:space-y-6 mb-8 lg:mb-0 lg:mr-8 xl:mr-16">
             {jobDetails.map((job, index) => (
               <button
@@ -108,9 +102,7 @@ export const DetailsCarousel = () => {
             ))}
           </div>
 
-          {/* Main content */}
           <div className="flex flex-col md:flex-row w-full items-center justify-between">
-            {/* Center content */}
             <div className="w-full md:w-1/2 lg:w-1/3 text-white px-4 md:px-8">
               <h1 className="text-4xl md:text-5xl font-light leading-tight mb-6 md:mb-8">
                 {jobDetails[activeIndex].title}
@@ -131,7 +123,6 @@ export const DetailsCarousel = () => {
               </button>
             </div>
 
-            {/* Right side image */}
             <div className="w-full md:w-1/2 mt-10 md:mt-0 md:ml-8">
               <div className="relative">
                 <div className="absolute -inset-4 md:-inset-6 rounded-3xl bg-blue-800 opacity-50"></div>

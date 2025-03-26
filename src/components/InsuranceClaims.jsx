@@ -3,7 +3,6 @@ import { FileCheck, Truck, Wrench, Car } from "lucide-react";
 export const InsuranceClaims = () => {
   return (
     <div className="min-h-screen w-full bg-gray-900 relative overflow-hidden">
-      {/* Background shape */}
       <div className="absolute left-0 top-0 w-full h-full">
         <svg
           width="100%"
@@ -34,9 +33,7 @@ export const InsuranceClaims = () => {
           </p>
         </div>
 
-        {/* Main content - Two column layout */}
         <div className="flex flex-col lg:flex-row gap-12 mb-20">
-          {/* Left side accident image */}
           <div className="w-full lg:w-1/2">
             <div className="relative">
               <div className="absolute -inset-4 md:-inset-6 rounded-3xl bg-orange-500 opacity-50"></div>
@@ -50,7 +47,6 @@ export const InsuranceClaims = () => {
             </div>
           </div>
 
-          {/* Right side content */}
           <div className="w-full lg:w-1/2 text-white">
             <div className="bg-orange-500 rounded-3xl p-8">
               <h3 className="text-3xl font-light mb-6 text-center">
@@ -83,9 +79,7 @@ export const InsuranceClaims = () => {
           </div>
         </div>
 
-        {/* Second section - What you need to know */}
         <div className="flex flex-col lg:flex-row-reverse gap-12 mb-20">
-          {/* Right side image */}
           <div className="w-full lg:w-1/2">
             <div className="relative">
               <div className="absolute -inset-4 md:-inset-6 rounded-3xl bg-red-600 opacity-50"></div>
@@ -99,7 +93,6 @@ export const InsuranceClaims = () => {
             </div>
           </div>
 
-          {/* Left side content */}
           <div className="w-full lg:w-1/2 text-white">
             <div className="bg-red-600 rounded-3xl p-8">
               <h3 className="text-3xl font-light mb-6 text-center">
@@ -126,7 +119,6 @@ export const InsuranceClaims = () => {
           </div>
         </div>
 
-        {/* Process steps section */}
         <div className="mt-20">
           <h2 className="text-4xl font-light mb-12 text-center text-white">
             Naše dodatne usluge
@@ -187,7 +179,6 @@ export const InsuranceClaims = () => {
           </div>
         </div>
 
-        {/* Call to action section */}
         <div className="mt-16 bg-blue-900 bg-opacity-40 rounded-3xl p-8 text-white text-center">
           <h2 className="text-3xl font-light mb-4">
             Ostvarite svoja prava na naknadu štete
