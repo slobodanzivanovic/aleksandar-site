@@ -14,12 +14,5 @@ export const Home = () => (
         HELLO WORLD
       </a>
     </div>
-    <div className="flex justify-center">
-      <img
-        className="w-1/2 md:w-1/3"
-        src="./logo-with-shadow.png"
-        alt="Vite Logo"
-      />
-    </div>
   </div>
 );

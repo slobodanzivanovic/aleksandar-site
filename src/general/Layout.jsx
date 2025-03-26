@@ -3,6 +3,10 @@ import { ErrorFallback } from "../components/ErrorFallback.jsx";
 
 export const Layout = ({ children }) => {
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>{children}</ErrorBoundary>
+    <>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        {children}
+      </ErrorBoundary>
+    </>
   );
 };
