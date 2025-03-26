@@ -1,9 +1,14 @@
 import { DetailsCarousel } from "../components/DetailsCarousel.jsx";
+import { Phone } from "lucide-react";
+import { AboutUs } from "../components/AboutUs.jsx";
+import { InsuranceClaims } from "../components/InsuranceClaims.jsx";
+import { ContactUs } from "../components/ContactUs.jsx";
+import { GoogleMap } from "../components/GoogleMap.jsx";
 
 export const Home = () => {
   return (
     <>
-      <div className="min-home-screen w-full bg-gray-900 relative overflow-hidden">
+      <div className="min-home-screen w-full bg-gray-900 relative overflow-hidden pt-24">
         {/* Main curved shape */}
         <div className="absolute left-0 top-0 w-full h-full">
           <svg
@@ -25,7 +30,7 @@ export const Home = () => {
         </div>
 
         {/* Content container */}
-        <div className="container mx-auto px-4 py-16 flex flex-col lg:flex-row items-center justify-between relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col lg:flex-row items-center justify-between relative z-10">
           {/* Left side content */}
           <div className="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
             <h1 className="text-5xl sm:text-6xl font-light leading-tight mb-6">
@@ -33,9 +38,18 @@ export const Home = () => {
               <br />
               value insurance
             </h1>
-            <p className="text-xl text-gray-300 max-w-lg">
+            <p className="text-xl text-gray-300 max-w-lg mb-8">
               Simple Steps You Can Take to Improve Your Financial Well-Being for
               the rest of Your Life
+            </p>
+            <p className="flex items-center gap-3 border-1 border-solid border-blue-800 bg-blue-800 p-2 rounded-lg w-full md:w-fit">
+              <Phone size={18} className="mr-2 text-gray-500" />
+              <span className="text-gray-500">
+                Pozovite nas odmah:
+                <a href="tel:0603189200" className="ml-1 font-bold text-white">
+                  0603189200
+                </a>
+              </span>
             </p>
           </div>
 
@@ -111,6 +125,10 @@ export const Home = () => {
         </div>
       </div>
       <DetailsCarousel />
+      <AboutUs />
+      <InsuranceClaims />
+      <ContactUs />
+      <GoogleMap />
     </>
   );
 };

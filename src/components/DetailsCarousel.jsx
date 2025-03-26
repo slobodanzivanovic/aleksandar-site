@@ -57,7 +57,7 @@ export const DetailsCarousel = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gray-900 relative overflow-hidden">
+    <div className="min-home-screen w-full bg-gray-900 relative overflow-hidden">
       {/* Background shape */}
       <div className="absolute left-0 top-0 w-full h-full">
         <svg
@@ -79,7 +79,7 @@ export const DetailsCarousel = () => {
       </div>
 
       {/* Container for the whole content */}
-      <div className="container mx-auto px-4 py-12 md:py-24 flex flex-col items-center justify-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 flex flex-col items-center justify-center relative z-10">
         <div className="flex flex-col lg:flex-row w-full items-center lg:items-start justify-center">
           {/* Left side vertical navigation - becomes horizontal on mobile */}
           <div className="flex flex-row lg:flex-col items-center justify-center lg:justify-start space-x-4 lg:space-x-0 lg:space-y-6 mb-8 lg:mb-0 lg:mr-8 xl:mr-16">

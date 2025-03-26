@@ -1,22 +1,21 @@
 import { Phone } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 export const Header = () => {
+  const location = useLocation();
+
+  if (location.pathname === "/politika-privatnosti") {
+    return null;
+  }
+
   return (
-    <div className="w-full  py-4">
+    <div className="absolute top-0 left-0 w-full z-50 py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-full py-2 px-6 flex items-center justify-between">
           <div className="flex items-center justify-between gap-10">
             {/* Logo */}
             <div className="flex items-center">
               <img className="w-16 h-16" src="./logo as.svg" alt="Vite Logo" />
-            </div>
-            {/* Phone number */}
-            <div className="hidden md:flex items-center">
-              <Phone size={18} className="mr-2 text-gray-500" />
-              <span className="text-gray-500">Pozovite nas odmah:</span>
-              <a href="tel:0603189200" className="ml-1 font-bold text-blue-800">
-                0603189200
-              </a>
             </div>
           </div>
 
